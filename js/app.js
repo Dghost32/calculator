@@ -8,13 +8,13 @@ let input = "";
 const getCurrTheme = () => {
   if (body.classList.contains("th1")) return "th1";
   if (body.classList.contains("th2")) return "th2";
-  if (body.classList.contains("th3")) return "th3";
+  return "th3";
 };
 
 const getNextTh = (currentTh) => {
   if (currentTh === "th1") return "th2";
   if (currentTh === "th2") return "th3";
-  if (currentTh === "th3") return "th1";
+  return "th1";
 };
 
 const toggleTheme = (newTh, currentTh) => {
@@ -35,8 +35,10 @@ const nextTh = () => {
   toggleTheme(nextTh, currentTh);
 };
 
+// nextTheme onclick
 themeSwitchContainer.onclick = () => nextTh();
 
+// theme onclick
 themeButtons.forEach((thBtn) => {
   thBtn.addEventListener("click", () => {
     if (thBtn.hasAttribute("data-theme")) {
@@ -46,16 +48,18 @@ themeButtons.forEach((thBtn) => {
   });
 });
 
+// Returns wether or not input is an error
 const findError = (inp) => {
   if (inp === "Syntax Error!" || inp === "NaN" || inp === "Infinity")
     return true;
   return false;
 };
 
+// handle btns click and calculations
 keyBoardBtns.forEach((kbBtn) => {
   kbBtn.onclick = () => {
     kbBtn.classList.add("active");
-    /* if an error ocurred, err msg will be cleared with any key press */
+    // if an error ocurred, err msg will be cleared with any key press
     if (findError(input)) {
       input = "";
       outputScreen.innerText = "00.00";
@@ -83,4 +87,19 @@ keyBoardBtns.forEach((kbBtn) => {
       kbBtn.classList.remove("active");
     }, 200);
   };
+});
+
+// handle typing
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Backspace") {
+    document.querySelector(`.calc .keyboard span[data-value="del"]`)?.click();
+  } else if (e.key === "Enter") {
+    document.querySelector(`.calc .keyboard span[data-value="="]`)?.click();
+  } else if (e.key === "x") {
+    document.querySelector(`.calc .keyboard span[data-value="reset"]`)?.click();
+  } else {
+    document
+      .querySelector(`.calc .keyboard span[data-value="${e.key}"]`)
+      ?.click();
+  }
 });
