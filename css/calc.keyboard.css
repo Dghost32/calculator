@@ -29,12 +29,8 @@
   box-shadow: 0.15em 0.15em 0 transparent;
 }
 
-.calc .keyboard .btn-bg:nth-child(odd) {
-  grid-column: 1/3;
-}
-
-.calc .keyboard .btn-bg:nth-child(even) {
-  grid-column: 3/5;
+.calc .keyboard .btn-bg {
+  grid-column: span 2;
 }
 
 .calc .keyboard .btn-type-one {
