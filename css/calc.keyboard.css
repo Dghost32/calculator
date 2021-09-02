@@ -45,12 +45,14 @@
 
 .calc .keyboard .btn-type-two {
   color: var(--txt-sec);
+  font-size: 0.5em;
   box-shadow: 0.15em 0.15em 0 var(--key-sh-sec);
   background: var(--key-bg-sec);
 }
 
 .calc .keyboard .btn-type-three {
   color: var(--txt-third);
+  font-size: 0.5em;
   box-shadow: 0.15em 0.15em 0 var(--key-sh-third);
   background: var(--key-bg-third);
 }
