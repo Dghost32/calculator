@@ -4,17 +4,25 @@ const themeSwitchContainer = document.querySelector(".calc .header .th-switch");
 const keyBoardBtns = document.querySelectorAll(".calc .keyboard span");
 const outputScreen = document.querySelector(".calc .screen span");
 let input = "";
+let ls = window.localStorage;
+
+// get and set last used theme
+window.onload = () => {
+  const theme = ls.getItem("theme");
+  const themeRx = /^th+[1-3]$/;
+  themeRx.test(theme) ? toggleTheme(theme) : toggleTheme("th1");
+};
 
 const getCurrTheme = () => {
   if (body.classList.contains("th1")) return "th1";
   if (body.classList.contains("th2")) return "th2";
-  return "th3";
+  if (body.classList.contains("th3")) return "th3";
 };
 
 const getNextTh = (currentTh) => {
   if (currentTh === "th1") return "th2";
   if (currentTh === "th2") return "th3";
-  return "th1";
+  if (currentTh === "th3") return "th1";
 };
 
 const toggleTheme = (newTh, currentTh) => {
@@ -27,6 +35,8 @@ const toggleTheme = (newTh, currentTh) => {
       body.classList.add(newTh);
     }
   }
+
+  ls.setItem("theme", newTh);
 };
 
 const nextTh = () => {

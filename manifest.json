@@ -1,0 +1,21 @@
+{
+  "short_name": "Calc",
+  "name": "Calculator | By Carlos Jimenez",
+  "icons": [
+    {
+      "src": "./images/icon128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "./images/icon256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "./images/icon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

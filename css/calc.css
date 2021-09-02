@@ -4,19 +4,8 @@
 
 .calc {
   min-width: 30vw;
-  width: 27vw;
+  width: 90vw;
+  max-width: 31.25rem;
   margin: 1em 0;
   position: relative;
-}
-
-@media (max-width: 1180px) {
-  .calc {
-    width: 50vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .calc {
-    width: 90vw;
-  }
 }

@@ -10,11 +10,6 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-sec);
-  border-radius: 0.625em;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
   background: var(--key-bg-sec);
+  border-radius: 0.625em;
 }

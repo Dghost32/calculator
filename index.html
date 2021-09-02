@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html role="doc-index" lang="en">
+<html role="application" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/icon.png" />
+    <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="./css/style.css" />
 
     <title>Calculator app | Frontend Mentor</title>
+
+    <script>
+      // service worker supported by browser
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js");
+      }
+    </script>
   </head>
-  <body role="doc-cover" class="flex bg-main flex-ai-c flex-jc-c th1">
+  <body role="main" class="flex bg-main flex-ai-c flex-jc-c">
     <div class="calc flex flex-fd-c flex-ai-c">
       <div class="header flex flex-ai-c flex-jc-sb">
         <h1>calc</h1>
