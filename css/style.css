@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+@import "_globals.css";
+@import "_variables.css";
+@import "calc.css";
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.3em;
+  color: var(--txt-main);
+  background: var(--key-bg-sec);
+  padding: 0.5em 0.5em;
+}
+
+.attribution a {
+  color: var(--txt-main);
+}

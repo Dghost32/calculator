@@ -1,0 +1,79 @@
+.calc .header {
+  width: 100%;
+  font-size: 0.5em;
+}
+
+.calc .header h1 {
+  text-transform: lowercase;
+  color: var(--txt-main);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.calc .header .th-switch {
+  cursor: pointer;
+  width: 20%;
+  background-color: var(--bg-sec);
+  border-radius: 1em;
+  height: 1.7em;
+  position: relative;
+  padding: 0.2em 0.5em;
+  transition: background-color 0.3s;
+}
+
+.calc .header .th-switch::before {
+  content: "THEME";
+  font-size: 0.6em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transform: translateX(-140%);
+  color: var(--txt-main);
+}
+
+.calc .header .th-nums {
+  cursor: pointer;
+  position: absolute;
+  width: 20%;
+  right: 0;
+  top: -1em;
+  font-size: 0.6em;
+  color: var(--txt-main);
+}
+
+.calc .header .th-nums .th-num {
+  transition: transform 0.3s;
+}
+
+body.th1 .calc .header .th-nums .th-num:nth-child(1) {
+  transform: translateY(-2px);
+}
+
+body.th2 .calc .header .th-nums .th-num:nth-child(2) {
+  transform: translateY(-2px);
+}
+
+body.th3 .calc .header .th-nums .th-num:nth-child(3) {
+  transform: translateY(-2px);
+}
+
+body .calc .header .th-switch .th-switch-button {
+  position: absolute;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: var(--key-bg-third);
+  border-radius: 50%;
+  left: 15%;
+  transition: 0.5s;
+}
+
+body.th2 .calc .header .th-switch .th-switch-button {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.th3 .calc .header .th-switch .th-switch-button {
+  left: 85%;
+  transform: translateX(-85%);
+}

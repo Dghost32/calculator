@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Spartan", sans-serif;
+  font-size: 2em;
+  background: var(--bg-main);
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.flex-fd-c {
+  flex-direction: column;
+}
+
+.flex.flex-ai-c {
+  align-items: center;
+}
+
+.flex.flex-jc-sa {
+  justify-content: space-around;
+}
+
+.flex.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex.flex-jc-c {
+  justify-content: center;
+}

@@ -1,0 +1,67 @@
+.calc .keyboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7em;
+  align-items: center;
+  justify-items: center;
+  background: var(--bg-sec);
+  padding: 0.5em;
+  border-radius: 0.3em;
+}
+
+.calc .keyboard span {
+  text-decoration: none;
+  font-size: 0.5em;
+  font-weight: 700;
+  padding: 0.8em 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+  text-transform: uppercase;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.calc .keyboard span.active {
+  transform: translate(0.175em, 0.175em);
+  box-shadow: 0.175em 0.175em 0 transparent;
+}
+
+.calc .keyboard .btn-bg:nth-child(odd) {
+  grid-column: 1/3;
+}
+
+.calc .keyboard .btn-bg:nth-child(even) {
+  grid-column: 3/5;
+}
+
+.calc .keyboard .btn-type-one {
+  color: var(--txt-main);
+  box-shadow: 0.175em 0.175em 0 var(--key-sh-main);
+  background: var(--key-bg-main);
+}
+
+.calc .keyboard .btn-type-two {
+  color: var(--txt-sec);
+  box-shadow: 0.175em 0.175em 0 var(--key-sh-sec);
+  background: var(--key-bg-sec);
+}
+
+.calc .keyboard .btn-type-three {
+  color: var(--txt-third);
+  box-shadow: 0.175em 0.175em 0 var(--key-sh-third);
+  background: var(--key-bg-third);
+}
+
+body.th1 .calc .keyboard .btn-type-one {
+  color: var(--txt-sec);
+}
+
+body.th1 .calc .keyboard .btn-type-two {
+  color: var(--txt-main);
+}
+
+body.th1 .calc .keyboard .btn-type-three {
+  color: var(--txt-third);
+}

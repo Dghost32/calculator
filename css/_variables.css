@@ -1,0 +1,55 @@
+body.th1 {
+  /* bg */
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-sec: hsl(223, 31%, 20%);
+  --bg-third: hsl(224, 36%, 15%);
+  /* keys backgrounds and shadows*/
+  --key-bg-main: hsl(30, 25%, 89%);
+  --key-sh-main: hsl(28, 16%, 65%);
+  --key-bg-sec: hsl(225, 21%, 49%);
+  --key-sh-sec: hsl(224, 28%, 35%);
+  --key-bg-third: hsl(6, 63%, 50%);
+  --key-sh-third: hsl(6, 70%, 34%);
+  /* txt */
+  --txt-main: #fff;
+  --txt-sec: hsl(221, 14%, 31%);
+  --txt-third: #fff;
+}
+
+body.th2 {
+  /* bg */
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-sec: hsl(0, 5%, 81%);
+  --bg-third: hsl(0, 0%, 93%);
+  /* keys backgrounds and shadows*/
+  --key-bg-main: hsl(45, 7%, 89%);
+  --key-sh-main: hsl(35, 11%, 61%);
+  --key-bg-sec: hsl(185, 42%, 37%);
+  --key-sh-sec: hsl(185, 58%, 25%);
+  --key-bg-third: hsl(25, 98%, 40%);
+  --key-sh-third: hsl(25, 99%, 27%);
+
+  /* txt */
+  --txt-main: hsl(60, 10%, 19%);
+  --txt-sec: #fff;
+  --txt-third: #fff;
+}
+
+body.th3 {
+  /* bg */
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-sec: hsl(268, 71%, 12%);
+  --bg-third: hsl(268, 71%, 12%);
+  /* keys backgrounds and shadows*/
+  --key-bg-main: hsl(268, 47%, 21%);
+  --key-sh-main: hsl(290, 70%, 36%);
+  --key-bg-sec: hsl(281, 89%, 26%);
+  --key-sh-sec: hsl(285, 91%, 52%);
+  --key-bg-third: hsl(176, 100%, 44%);
+  --key-sh-third: hsl(177, 92%, 70%);
+
+  /* txt */
+  --txt-main: hsl(52, 100%, 62%);
+  --txt-sec: #fff;
+  --txt-third: hsl(198, 20%, 13%);
+}
