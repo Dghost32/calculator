@@ -91,15 +91,16 @@ keyBoardBtns.forEach((kbBtn) => {
 
 // handle typing
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Backspace") {
+  const key = e.key.toLowerCase();
+  if (key === "backspace") {
     document.querySelector(`.calc .keyboard span[data-value="del"]`)?.click();
-  } else if (e.key === "Enter") {
+  } else if (key === "enter") {
     document.querySelector(`.calc .keyboard span[data-value="="]`)?.click();
-  } else if (e.key === "x") {
+  } else if (key === "x" || key === "r") {
     document.querySelector(`.calc .keyboard span[data-value="reset"]`)?.click();
   } else {
     document
-      .querySelector(`.calc .keyboard span[data-value="${e.key}"]`)
+      .querySelector(`.calc .keyboard span[data-value="${key}"]`)
       ?.click();
   }
 });
