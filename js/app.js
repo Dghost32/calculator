@@ -58,7 +58,7 @@ keyBoardBtns.forEach((kbBtn) => {
     /* if an error ocurred, err msg will be cleared with any key press */
     if (findError(input)) {
       input = "";
-      outputScreen.innerText = "00.00";
+      outputScreen.innerText = "0.00";
     }
     if (kbBtn.hasAttribute("data-value")) {
       let btnValue = kbBtn.attributes.getNamedItem("data-value").value;
@@ -77,7 +77,7 @@ keyBoardBtns.forEach((kbBtn) => {
       }
       input !== ""
         ? (outputScreen.innerText = input)
-        : (outputScreen.innerText = "00.00");
+        : (outputScreen.innerText = "0.00");
     }
     setTimeout(() => {
       kbBtn.classList.remove("active");
