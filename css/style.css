@@ -6,9 +6,8 @@
 .attribution {
   position: absolute;
   bottom: 0;
-  font-size: 0.3em;
+  font-size: 0.4em;
   color: var(--txt-main);
-  background: var(--key-bg-sec);
   padding: 0.5em 0.5em;
 }
 

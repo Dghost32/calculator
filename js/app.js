@@ -4,7 +4,6 @@ const themeSwitchContainer = document.querySelector(".calc .header .th-switch");
 const keyBoardBtns = document.querySelectorAll(".calc .keyboard span");
 const outputScreen = document.querySelector(".calc .screen span");
 let input = "";
-let finished = false;
 
 const getCurrTheme = () => {
   if (body.classList.contains("th1")) return "th1";
@@ -47,12 +46,19 @@ themeButtons.forEach((thBtn) => {
   });
 });
 
+const findError = (inp) => {
+  if (inp === "Syntax Error!" || inp === "NaN" || inp === "Infinity")
+    return true;
+  return false;
+};
+
 keyBoardBtns.forEach((kbBtn) => {
   kbBtn.onclick = () => {
     kbBtn.classList.add("active");
-    if (finished) {
+    /* if an error ocurred, err msg will be cleared with any key press */
+    if (findError(input)) {
       input = "";
-      finished = false;
+      outputScreen.innerText = "00.00";
     }
     if (kbBtn.hasAttribute("data-value")) {
       let btnValue = kbBtn.attributes.getNamedItem("data-value").value;
@@ -63,10 +69,9 @@ keyBoardBtns.forEach((kbBtn) => {
       } else if (btnValue === "=") {
         try {
           input = eval(input).toFixed(2);
-        } catch (error) {
+        } catch (err) {
           input = "Syntax Error!";
         }
-        finished = true;
       } else {
         input += btnValue;
       }
