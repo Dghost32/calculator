@@ -1,8 +1,15 @@
-const body = document.querySelector("body");
-const themeButtons = document.querySelectorAll(".th-num");
-const themeSwitchContainer = document.querySelector(".calc .header .th-switch");
-const keyBoardBtns = document.querySelectorAll(".calc .keyboard span");
-const outputScreen = document.querySelector(".calc .screen span");
+const $ = (selector, all = false) =>
+  !all ? document.querySelector(selector) : document.querySelectorAll(selector);
+const handleEvent = (element, ev, handler) =>
+  element.addEventListener(ev, handler);
+
+// get dom elems
+const body = $("body");
+const themeButtons = $(".th-num", true);
+const themeSwitchContainer = $(".calc .header .th-switch");
+const keyBoardBtns = $(".calc .keyboard span", true);
+const outputScreen = $(".calc .screen span");
+
 let input = "";
 let ls = window.localStorage;
 
@@ -50,7 +57,7 @@ themeSwitchContainer.onclick = () => nextTh();
 
 // theme onclick
 themeButtons.forEach((thBtn) => {
-  thBtn.addEventListener("click", () => {
+  handleEvent(thBtn, "click", () => {
     if (thBtn.hasAttribute("data-theme")) {
       const btnTheme = thBtn.attributes.getNamedItem("data-theme").value;
       toggleTheme(btnTheme);
@@ -100,17 +107,15 @@ keyBoardBtns.forEach((kbBtn) => {
 });
 
 // handle typing
-document.addEventListener("keydown", (e) => {
+handleEvent(document, "keydown", (e) => {
   const key = e.key.toLowerCase();
   if (key === "backspace") {
-    document.querySelector(`.calc .keyboard span[data-value="del"]`)?.click();
+    $(`.calc .keyboard span[data-value="del"]`)?.click();
   } else if (key === "enter") {
-    document.querySelector(`.calc .keyboard span[data-value="="]`)?.click();
+    $(`.calc .keyboard span[data-value="="]`)?.click();
   } else if (key === "x" || key === "r") {
-    document.querySelector(`.calc .keyboard span[data-value="reset"]`)?.click();
+    $(`.calc .keyboard span[data-value="reset"]`)?.click();
   } else {
-    document
-      .querySelector(`.calc .keyboard span[data-value="${key}"]`)
-      ?.click();
+    $(`.calc .keyboard span[data-value="${key}"]`)?.click();
   }
 });
