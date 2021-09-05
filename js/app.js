@@ -26,11 +26,10 @@ const getCurrTheme = () => {
   if (body.classList.contains("th3")) return "th3";
 };
 
-const getNextTh = (currentTh) => {
-  if (currentTh === "th1") return "th2";
-  if (currentTh === "th2") return "th3";
-  if (currentTh === "th3") return "th1";
-};
+// thn -> th(n+1), n in [1,2,3]
+const getNextTh = (currentTh) =>
+  currentTh.slice(0, 2) +
+  ((parseFloat(currentTh[currentTh.length - 1]) % 3) + 1);
 
 const toggleTheme = (newTh, currentTh) => {
   if (currentTh) {
