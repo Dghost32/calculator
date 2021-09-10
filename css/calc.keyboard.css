@@ -20,7 +20,9 @@
   border-radius: 0.3em;
   text-transform: uppercase;
   width: 100%;
+  min-height: 2rem;
   height: 5vh;
+  max-height: 3 rem;
   transition: 0.3s;
 }
 
