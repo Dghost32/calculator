@@ -10,7 +10,7 @@ body {
   position: relative;
   min-height: 100vh;
   font-family: "Spartan", sans-serif;
-  font-size: 2em;
+  font-size: 1.8em;
   background: var(--bg-main);
   font-weight: 700;
   transition: 0.3s;
